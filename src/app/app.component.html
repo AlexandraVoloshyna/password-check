@@ -1,0 +1,10 @@
+<main>
+  <h1>Password strength checker</h1>
+  <input type="password" [(ngModel)]="password" (input)="checkPasswordStrength()">
+<div class="container">
+  <div class="strength-section" [ngClass]="{'gray': strength === 'empty', 'red': strength === 'weak' || strength === 'easy', 'yellow': strength === 'medium', 'green': strength === 'strong'}"></div>
+  <div class="strength-section" [ngClass]="{'gray': strength === 'empty'|| strength === 'easy', 'red': strength === 'weak', 'yellow': strength === 'medium', 'green': strength === 'strong'}"></div>
+  <div class="strength-section" [ngClass]="{'gray': strength === 'empty'|| strength === 'easy'|| strength === 'medium', 'red': strength === 'weak',  'green': strength === 'strong'}"></div>
+</div>
+
+</main>
