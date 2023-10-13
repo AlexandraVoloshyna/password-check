@@ -1,4 +1,4 @@
-.strength-section{
+.container div{
     width: 100px;
     height: 20px; 
 }
@@ -8,10 +8,7 @@ main{
     justify-content: center;
     flex-direction: column;
 }
-input{
-    margin-bottom: 12px;
-    width: 310px;
-}
+
 .container{
     display: flex;
     gap: 5px;

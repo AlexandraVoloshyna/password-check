@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, } from '@angular/core';
 import { PasswordStrengthService } from './password-strength.service';
+import { FormControl, FormGroup } from '@angular/forms';
+
 
 
 @Component({
@@ -7,12 +9,17 @@ import { PasswordStrengthService } from './password-strength.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent  {
   constructor(private passwordStrengthService: PasswordStrengthService) { }
-  password: string = '';
   strength: string = 'empty';
-
+  FormGroup = new FormGroup({
+    password: new FormControl("")
+  })
+  
   checkPasswordStrength() {
-    this.strength = this.passwordStrengthService.passwordStrength(this.password);
+    const passwordControl = this.FormGroup.get('password')?.value;
+  if (passwordControl !== null && passwordControl !== undefined) {
+      this.strength = this.passwordStrengthService.passwordStrength(passwordControl);
+        }
     }
 }

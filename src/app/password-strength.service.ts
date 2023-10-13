@@ -7,7 +7,7 @@ export class PasswordStrengthService {
   constructor() { 
 
   }
-  passwordStrength(password: string): string {
+  passwordStrength(password: string ): string {
     if (!password) {
       return 'empty';
     } else if (password.length < 8) {
